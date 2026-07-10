@@ -35,3 +35,5 @@ dist-ssr/
 _scripts/voice-rag-etl/node_modules/
 _scripts/voice-rag-etl/.env
 client_secret_*.json
+.vercel
+.env*

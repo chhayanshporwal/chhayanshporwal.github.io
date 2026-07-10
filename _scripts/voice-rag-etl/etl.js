@@ -29,7 +29,12 @@ if (existsSync(envPath)) {
     const eqIndex = trimmed.indexOf('=');
     if (eqIndex === -1) continue;
     const key = trimmed.substring(0, eqIndex).trim();
-    const val = trimmed.substring(eqIndex + 1).trim();
+    let val = trimmed.substring(eqIndex + 1).trim();
+    if (val.startsWith('"') && val.endsWith('"')) {
+      val = val.substring(1, val.length - 1);
+    } else if (val.startsWith("'") && val.endsWith("'")) {
+      val = val.substring(1, val.length - 1);
+    }
     if (!process.env[key]) process.env[key] = val;
   }
 }
