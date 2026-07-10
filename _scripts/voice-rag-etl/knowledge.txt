@@ -1,0 +1,80 @@
+Identity and Biography:
+Chhayansh Porwal is a 3rd-year B.Tech Computer Science Engineering student at Rajasthan Technical University, Kota, with a stellar CGPA of 8.73 (measured up to his 5th semester). Chhayansh is an advanced Software Engineer and AI developer who specializes in native Android architecture, high-throughput computer vision pipelines, and full-stack real-time systems. His engineering philosophy centers on deep fundamentals — moving beyond simple API wrappers to master system-level APIs, low-level operating system APIs, and custom neural network implementations. He is actively seeking software engineering roles where he can leverage his expertise in scalable backend architectures, real-time systems, and complex AI integrations to solve high-impact technical challenges.
+
+Education and Academic Merits:
+- Degree: Bachelor of Technology (B.Tech) in Computer Science Engineering (CSE)
+- Institution: Rajasthan Technical University (RTU), Kota
+- Timeline: 2023 – 2027 (Expected graduation)
+- Academic Standing: CGPA of 8.73 (evaluated through the 5th semester)
+
+Core Technical Skills:
+- Programming Languages: Python, Kotlin (Native Android), JavaScript, TypeScript, C++, HTML5, CSS3, SCSS
+- Web Frameworks & APIs: Node.js, FastAPI (Python), Next.js, React.js, Express.js, REST APIs, GraphQL
+- Real-time & Databases: WebSockets, Redis (Pub/Sub and Caching), Pinecone Vector Database, Room Database (Android, Encrypted), SQLite, PostgreSQL, MongoDB
+- AI, Machine Learning & Computer Vision: PyTorch, 3D Noise2Void (N2V), YOLOv8 (Object Detection), OpenAI CLIP (ViT-L/14 Embeddings), MediaPipe FaceMesh, FaceNet, MTCNN (Facial Landmark Detection), SentenceTransformers, Text-to-Speech (TTS) integration, Speech-to-Text (STT) APIs
+- Software Engineering & DevOps: Docker, Git, GitHub Actions (CI/CD Pipelines), Pytest (Asynchronous REST API testing), Android Telephony APIs, Broadcast Receivers, background services, sessionStorage management
+
+Achievements & Merits:
+- Global Rank 2 — AI4Life International Grand Challenge (Calcium Imaging Denoising). Secured second place worldwide by developing a custom self-supervised 3D image denoising pipeline.
+- CGPA: 8.73 — High-performing student at Rajasthan Technical University.
+
+Work Experience:
+1. Software Engineer Intern — Softsensor.ai
+   - Timeline: May 15, 2026 – June 30, 2026 (45-day duration)
+   - Core Project: Orbit Workspace
+   - Summary: Architected a live full-stack enterprise project management and workspace collaboration platform using Python, FastAPI, and React.js.
+   - Real-time Infrastructure: Deployed dynamic WebSockets combined with Redis Pub/Sub caching architecture to enable instant, real-time push notifications and live task status tracking for hundreds of concurrent enterprise users.
+   - Testing & Quality: Designed and executed automated REST API test scripts using Pytest for comprehensive functional and integration testing.
+   - CI/CD & DevOps: Created automated CI/CD pipelines via GitHub Actions to run Pytest suites on every code commit.
+
+2. Computer Vision Developer Intern — Fotographiya (iStart-incubated startup)
+   - Timeline: June 16, 2025 – July 30, 2025 (45-day duration)
+   - Core Project: AI Wedding Culling Suite
+   - Summary: Engineered a high-throughput AI-powered image culling backend designed to rapidly evaluate, filter, and cluster massive directories of raw wedding photography.
+   - Pipeline Optimization: Deployed a highly optimized FastAPI REST pipeline that mathematically pre-filters images for blur, validates human subjects with YOLOv8, and maps facial features with MediaPipe FaceMesh.
+   - Semantic Clustering: Built clustering logic using L2 distance calculations on CLIP ViT-L/14 high-dimensional embeddings to group near-duplicate burst shots and pick the best shot.
+   - Face Recognition: Integrated FaceNet/MTCNN to cross-reference faces against a VIP database, guaranteeing the preservation of VIP photos (e.g., Bride and Groom).
+
+Project: 3D Calcium Imaging Denoising (AI4Life International Grand Challenge)
+- Context & Challenge: Volumetric (3D) calcium imaging of live biological cells requires extremely low light to avoid phototoxicity (damaging or killing the live cells). This results in massive visual noise. Standard supervised learning is impossible because obtaining a clean "ground truth" reference image physically destroys the cellular sample.
+- Denoising Pipeline Architecture: Developed a self-supervised image restoration pipeline to denoise volumetric microscopy data. It utilizes a 3D Noise2Void (N2V) neural network built in PyTorch. The pipeline loads high-dimensional 3D TIFF stacks, applies a mathematical blind-spot masking algorithm (excluding random pixels during training), and forces a 3D UNet encoder-decoder architecture to predict the missing values based strictly on spatial neighborhoods. Because cellular structures are continuous while noise is mathematically random, the network learns to ignore noise and extract clean biological signals.
+- Evaluation Metrics: The pipeline's performance is rigorously measured using stSNR (spatio-temporal Signal-to-Noise Ratio), PSNR (Peak Signal-to-Noise Ratio), and Scale-Invariant PSNR (SI-PSNR).
+- Deployment & DevOps: Containerized the entire PyTorch pipeline using Docker to ensure perfect reproducibility and smooth execution on the Grand Challenge platform, which led directly to achieving Global Rank 2.
+- GitHub Repository: https://github.com/chhayanshporwal/3d-n2v-calcium-denoising
+
+Project: CallSentry (Android Application)
+- Context & Challenge: Standard Android privacy and call blocking applications are often built using cross-platform wrappers or route private logs through external servers, posing latency and security risks. CallSentry provides strict local Whitelist/Blocklist filtering and emergency breakthrough rules on-device.
+- App Architecture: CallSentry is a system-level Android application built natively in Kotlin. It registers low-level Broadcast Receivers and Notification Listener Services to monitor incoming telephony states. When a call is received, the background service queries an encrypted local database. If the number is blocked, it rejects the call programmatically using the system endCall API. 
+- Emergency Breakthrough Algorithm: If a whitelisted contact or an emergency contact calls, CallSentry's algorithm overrides the OS-level restrictions and silence modes, ensuring critical calls reach the user instantly.
+- Tech Stack & MVVM: Architected using MVVM (Model-View-ViewModel), Jetpack Compose for a reactive UI, Kotlin Coroutines for non-blocking database queries, and a Room Database for encrypted local storage.
+- GitHub Repository: https://github.com/chhayanshporwal/CallSentry
+- APK Link: https://github.com/chhayanshporwal/CallSentry/releases/tag/v1.0.0-beta
+
+Project: AI Wedding Image Culling System
+- Context & Challenge: Event photographers waste days manually reviewing thousands of raw burst photos to delete blurry, blinking, or duplicate photos. This system automates the culling process via a high-throughput computer vision pipeline.
+- Pipeline Architecture: The pipeline orchestrates specialized AI models in a multi-stage sequence:
+  1. Mathematical Pre-filtering: Calculates the variance of the Laplacian of each image. If the sharpness falls below a strict mathematical threshold, the image is immediately rejected as blurry, saving GPU overhead.
+  2. Subject Validation: Uses YOLOv8n to confirm that human subjects are present and represent the focal point.
+  3. Quality Check: Maps facial landmarks using MediaPipe FaceMesh to detect closed eyes, bad exposure, and poor expressions, routing low-quality frames to a reject bin.
+  4. Semantic Clustering: Generates 768-dimensional vector embeddings for the surviving images using OpenAI's CLIP (ViT-L/14) model. The system computes the L2 distance between embeddings to group near-identical burst shots and selects the single highest-scoring image from each cluster.
+  5. VIP Preservation: Cross-references faces against enrolled VIPs (e.g., Bride and Groom) using FaceNet and MTCNN. VIP photos are prioritized and always preserved regardless of default culling algorithms.
+- Backend Tech Stack: Built using FastAPI. FastAPI's asynchronous routing allows massive batch processing of image galleries without blocking or locking up the Python backend server during GPU inference.
+- GitHub Repository: https://github.com/chhayanshporwal/AI-Wedding-Culling-Suite
+
+Project: Maya (案内) Voice-Enabled RAG Architecture
+- Context & Overview: Maya is the self-aware, intelligent Voice-RAG conversational agent that resides on Chhayansh's portfolio website. Engineered entirely by Chhayansh from scratch, Maya acts as his interactive virtual representative, showcasing production-grade LLM engineering with a zero-LangChain architecture.
+- Frontend & Presentation: Maya features a 3D anime avatar rendered in the browser using Three.js and `@pixiv/three-vrm` to handle interactive skeletal animations. Her voice recognition uses the browser's native Web Speech API. For speech synthesis, she streams high-quality base64 audio generated by Google Cloud's Neural2 Text-to-Speech (TTS) engine, with ElevenLabs integrated as a premium voice synthesis fallback.
+- Backend & RAG Brain: The backend runs as a Vercel Serverless Function built in Node.js. Chhayansh developed a custom Node.js ETL script that parses his portfolio markdown files, generates vector embeddings using Google's generative models (`gemini-embedding-001` or `text-embedding-004`), and indexes them into a Pinecone Serverless vector database.
+- Orchestration & Safety: When a user speaks, the Vercel backend receives the text, rewrites the query using conversation history to handle pronouns (Contextualize Question step), performs a cosine similarity search in Pinecone to retrieve relevant portfolio chunks, and prompts the Groq LLM (Grok/Llama 3.3) to generate a strictly English response grounded in the retrieved facts. Maya is programmed to never hallucinate, answering solely based on real data.
+- State Persistence: Utilizes browser `sessionStorage` to persist conversation history and chat panel open/close states, ensuring the chat survives page navigation.
+- GitHub Repository: https://github.com/chhayanshporwal/voice-rag-backend
+
+Project: Orbit Workspace
+- Context & Overview: Orbit Workspace is an enterprise collaboration platform designed for real-time task management and team collaboration.
+- System Architecture:
+  - Backend: Engineered using Python and FastAPI, employing advanced Object-Oriented Programming (OOP) concepts and optimized Data Structures to handle resource assignment algorithms.
+  - Frontend: Developed with React.js, featuring a clean Dashboard and Task view.
+  - Real-time Synchronization: Integrated WebSockets and a RAG/Redis Pub/Sub cache to push instant task notifications and live state updates across connected clients with minimal latency.
+  - Testing & Deployment: Leveraged Pytest to write rigorous functional and integration test scripts for all REST APIs, integrated into a automated CI/CD pipeline via GitHub Actions.
+- GitHub Repository: https://github.com/chhayanshporwal/orbit-workspace
+- Live Platform Link: https://www.orbitworkspace.xyz/
