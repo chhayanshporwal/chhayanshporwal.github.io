@@ -9,7 +9,7 @@
  *   - Web Speech API: voice input (STT) + natural voice output (TTS)
  *   - Sentence-by-sentence TTS with human breathing pauses
  *   - Female voice selection with dynamic language matching
- *   - Multi-lingual support (follows Nandini's response language)
+ *   - Multi-lingual support (follows Maya's response language)
  *
  * Dependencies (loaded via CDN in head):
  *   - three.js (ES module)
@@ -27,7 +27,7 @@
   const API_ENDPOINT = `${API_BASE_URL}/api/chat`;
 
   // VRM 3D model path (served by Jekyll)
-  const VRM_MODEL_PATH = '/assets/models/Nandini.vrm';
+  const VRM_MODEL_PATH = '/assets/models/Maya.vrm';
 
   // TTS settings
   const TTS_SENTENCE_PAUSE_MS = 300; // Breathing pause between sentences
@@ -146,7 +146,7 @@
     function tryInit3D() {
       // Optimiziation: Drop 3D model on mobile/tablet screens for performance
       if (window.innerWidth <= 768) {
-        console.log('Nandini: Mobile screen detected. Skipping 3D VRM for optimization.');
+        console.log('Maya: Mobile screen detected. Skipping 3D VRM for optimization.');
         renderFallbackAvatar(container);
         return;
       }
@@ -156,14 +156,14 @@
           initThreeScene(container);
           loadVRMModel();
         } catch (err) {
-          console.warn('Nandini: 3D init failed, using fallback.', err);
+          console.warn('Maya: 3D init failed, using fallback.', err);
           renderFallbackAvatar(container);
         }
       } else if (attempts < maxAttempts) {
         attempts++;
         setTimeout(tryInit3D, 100);
       } else {
-        console.warn('Nandini: THREE.js not loaded after 5s, using fallback avatar.');
+        console.warn('Maya: THREE.js not loaded after 5s, using fallback avatar.');
         renderFallbackAvatar(container);
       }
     }
@@ -228,7 +228,7 @@
   function loadVRMModel() {
     // Use the globally available GLTFLoader and VRM classes (from CDN)
     if (typeof THREE.GLTFLoader === 'undefined' && typeof GLTFLoader === 'undefined') {
-      console.warn('Nandini: GLTFLoader not available.');
+      console.warn('Maya: GLTFLoader not available.');
       return;
     }
 
@@ -264,7 +264,7 @@
           window._annaiVRMReady = true;
           showTooltipAfterLoad();
           
-          console.log('Nandini: VRM loaded. Humanoid:', !!vrm.humanoid, 'Bones:', vrm.humanoid ? Object.keys(vrm.humanoid.humanBones) : 'N/A');
+          console.log('Maya: VRM loaded. Humanoid:', !!vrm.humanoid, 'Bones:', vrm.humanoid ? Object.keys(vrm.humanoid.humanBones) : 'N/A');
         } else {
           // Plain GLTF model fallback
           const model = gltf.scene;
@@ -284,7 +284,7 @@
       },
       undefined, // progress
       (error) => {
-        console.warn('Nandini: VRM load failed, using fallback.', error);
+        console.warn('Maya: VRM load failed, using fallback.', error);
         if (vrmRenderer) {
           const container = avatarContainer();
           if (container) renderFallbackAvatar(container);
@@ -470,7 +470,7 @@
     disposeVRM();
     container.innerHTML = `
       <div class="annai-avatar-fallback">
-        <img src="/images/favicon-192x192.png" alt="Nandini Favicon" style="width: 50px; height: 50px; z-index: 1;" />
+        <img src="/images/favicon-192x192.png" alt="Maya Favicon" style="width: 50px; height: 50px; z-index: 1;" />
       </div>
     `;
   }
@@ -683,7 +683,7 @@
         speakResponseFallback(data.answer, data.detectedLang || 'en-US');
       }
     } catch (error) {
-      console.error('Nandini chat error:', error);
+      console.error('Maya chat error:', error);
       if (typingEl) typingEl.remove();
       appendError(error.message && !error.message.includes('Failed to fetch') ? error.message : "Sorry, I couldn't connect. Please check your network and try again.");
     } finally {

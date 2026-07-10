@@ -1,6 +1,6 @@
 ---
-title: "Nandini: Voice-Enabled RAG Architecture"
-seo_title: "Nandini Voice RAG Assistant | Pinecone, Groq LLM & Vercel Serverless API"
+title: "Maya: Voice-Enabled RAG Architecture"
+seo_title: "Maya Voice RAG Assistant | Pinecone, Groq LLM & Vercel Serverless API"
 description: "A production-grade voice-enabled RAG assistant using Pinecone vector database, Groq LLM, Vercel Serverless Functions, and Google Cloud TTS with a zero-LangChain architecture."
 excerpt: "A scalable, self-aware AI assistant utilizing a Pinecone Vector Database and Vercel Serverless with a highly optimized Zero-LangChain architecture."
 collection: portfolio
@@ -10,9 +10,9 @@ date: "2024-04-01"
 [<i class="fab fa-fw fa-github"></i> View Source Code](https://github.com/chhayanshporwal/voice-rag-backend)
 
 ## Overview
-To demonstrate production-grade LLM engineering, I built **"Nandini"**—a custom Retrieval-Augmented Generation (RAG) assistant integrated directly into this portfolio. Instead of utilizing basic API wrappers or heavy abstraction frameworks, this system relies on a lightweight, standalone serverless backend and a dedicated vector database to answer complex technical queries about my work with zero hallucinations. 
+To demonstrate production-grade LLM engineering, I built **"Maya"**—a custom Retrieval-Augmented Generation (RAG) assistant integrated directly into this portfolio. Instead of utilizing basic API wrappers or heavy abstraction frameworks, this system relies on a lightweight, standalone serverless backend and a dedicated vector database to answer complex technical queries about my work with zero hallucinations. 
 
-Nandini is capable of intelligently describing her own architecture and creation process to users in real-time.
+Maya is capable of intelligently describing her own architecture and creation process to users in real-time.
 
 ---
 

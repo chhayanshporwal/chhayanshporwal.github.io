@@ -1,5 +1,5 @@
 /**
- * ETL Script — Nandini (案内) Voice RAG
+ * ETL Script — Maya (案内) Voice RAG
  * 
  * ZERO external dependencies — uses only built-in fetch().
  * Works on Node.js 18+ (including v25).
@@ -168,7 +168,7 @@ function metaFor(sections, offset) {
 
 // ─── Main ──────────────────────────────────────────────────────
 async function main() {
-  console.log('\n🚀  Nandini ETL Pipeline — Starting...\n');
+  console.log('\n🚀  Maya ETL Pipeline — Starting...\n');
 
   // 1. Load knowledge
   const kPath = resolve(__dirname, 'knowledge.txt');
@@ -224,7 +224,7 @@ async function main() {
   }
   const secs = ((Date.now() - t0) / 1000).toFixed(1);
   console.log(`\n\n✅  Done! ${vectors.length} vectors upserted in ${secs}s`);
-  console.log(`🎉  Nandini's knowledge base is ready!\n`);
+  console.log(`🎉  Maya's knowledge base is ready!\n`);
 }
 
 function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
