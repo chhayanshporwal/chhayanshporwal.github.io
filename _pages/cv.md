@@ -7,8 +7,6 @@ redirect_from:
   - /resume
 ---
 
-You can also [download my full CV as a PDF](/Chhayansh%20Porwal-CV.pdf).
-
 Education
 ======
 * **B.Tech in Computer Science Engineering**, Rajasthan Technical University (RTU), Kota — 2023–2027
@@ -29,9 +27,9 @@ Work Experience
 Technical Skills
 ======
 * **Programming:** Python, Kotlin, JavaScript/TypeScript, C++
-* **Web & APIs:** Node.js, FastAPI, Next.js, Prisma, HTML, CSS
-* **AI & ML:** YOLOv8, PyTorch, CLIP, MediaPipe, SentenceTransformers, 3D Noise2Void
-* **Tools & Infra:** Git, Docker, MongoDB, Redis, PostgreSQL, Firebase
+* **Web & APIs:** Node.js, FastAPI, Next.js, HTML, CSS
+* **AI & ML:** YOLOv8, PyTorch, CLIP, MediaPipe, SentenceTransformers, 3D Noise2Void, Groq API, Text-to-Speech (TTS)
+* **Tools & Infra:** Git, Docker, Pinecone (Vector DB), MongoDB, Redis, PostgreSQL, Firebase
 
 Achievements
 ======

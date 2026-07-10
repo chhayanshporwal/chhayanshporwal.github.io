@@ -11,7 +11,7 @@ I am a 3rd-year B.Tech Computer Science Engineering student at Rajasthan Technic
 
 I have hands-on industry experience building AI-powered products: from chaining YOLOv8 + CLIP + MTCNN for an automated wedding photo culling system at Fotographiya, to architecting Orbit Workspace, a live full-stack enterprise project management platform with React.js, Python, and FastAPI at Softsensor.ai. My competitive research work on 3D Noise2Void denoising earned **Global Rank 2** at the AI4Life International Grand Challenge.
 
-I am currently studying the Japanese language and actively preparing my engineering foundation to enter the Japanese tech market as a fresh graduate.
+I am actively seeking software engineering roles where I can leverage my expertise in highly scalable backend architectures, real-time systems, and complex AI integrations to solve high-impact technical challenges.
 
 ## Achievements
 
@@ -40,22 +40,39 @@ Below is a detailed technical overview of my core engineering systems and resear
 
 ---
 
-### 2. Engineering: CallSentry Native Android Security
+### 2. Engineering: Orbit Workspace (Softsensor.ai)
 
-[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/CallSentry.git) | [View Portfolio Case Study](/projects/callsentry)
+[<i class="fas fa-fw fa-link"></i> Live Site](https://www.orbitworkspace.xyz/) | [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/orbit-workspace) | [View Portfolio Case Study](/projects/orbit-workspace)
 
-**The Challenge:** Standard Android privacy apps often rely on cross-platform wrappers or route data through external servers, leading to latency and severe privacy risks. I needed a system-level interceptor that operates entirely natively on-device, offering strict whitelist blocking while ensuring critical emergency calls can bypass "Do Not Disturb" rules.
+**The Challenge:** Enterprise workspace collaboration platforms require highly scalable backends and real-time synchronization to ensure seamless task management and instant notifications for all users.
 
-**Technical Overview & Flow:** CallSentry is built strictly natively, executing directly within the OS environment. The app registers low-level **Broadcast Receivers** and **Notification Listener Services** to seamlessly monitor incoming telephony states. When a call arrives, the background service immediately queries an encrypted local database. If the number is restricted, the call is dropped or silenced dynamically. Conversely, the Emergency Breakthrough algorithm intelligently overrides OS-level restrictions to ensure vital contacts reach the user instantly.
+**Technical Overview & Flow:** I architected a live full-stack enterprise project management platform. The highly scalable backend was built using Python and FastAPI, employing OOPs concepts and Data Structures to optimize assignment algorithms. The frontend was developed in React.js, integrating real-time WebSockets and Redis for instant notifications and task tracking. I designed and executed automated test scripts using Pytest for functional and integration testing across REST APIs. Furthermore, I ensured continuous integration by setting up automated CI/CD pipelines via GitHub Actions.
 
 **Tech Stack Rationale:**
 
-- **Native Kotlin & Jetpack Compose:** Cross-platform tools (Flutter/React Native) are too abstracted for deep system-level APIs. Kotlin provides direct access to Android's `TelephonyManager`, while Compose ensures a highly reactive, state-driven UI.
-- **MVVM & Room DB:** The Model-View-ViewModel architecture combined with Kotlin Coroutines provides asynchronous, thread-safe access to the encrypted Room Database, resulting in zero-latency execution during high-stress call events.
+- **Python & FastAPI:** Provided the high-performance, asynchronous capabilities needed for a scalable enterprise backend.
+- **React.js, WebSockets, & Redis:** Enabled a dynamic frontend with instant real-time notifications and efficient task tracking.
+- **Pytest & GitHub Actions:** Ensured robustness and reliability through comprehensive automated testing and continuous integration pipelines.
 
 ---
 
-### 3. Engineering: AI Wedding Image Culling Suite
+### 3. Engineering: Voice-Enabled RAG Architecture
+
+[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/voice-rag-backend.git) | [View Portfolio Case Study](/projects/voice-rag-assistant)
+
+**The Challenge:** Static portfolios fail to convey the depth of engineering work. I needed a production-grade conversational AI that could answer complex technical questions about my work in multiple languages, with zero hallucinations, natively integrated into the site's UI.
+
+**Technical Overview & Flow:** The pipeline begins with a custom Node.js ETL script that chunks my portfolio markdown files, embeds them via Google's `text-embedding-004`, and indexes them into a Pinecone vector database. On the frontend, a 3D VRM avatar captures user voice/text and POSTs it to a Vercel Serverless Function. The backend manages conversational memory, executing a _Contextualize Question_ step via Groq to handle pronouns. It then retrieves the top Pinecone chunks and generates a strictly English response. Finally, the response routes through a multi-tier TTS fallback chain (ElevenLabs to Google Cloud TTS) and streams base64 audio back to the frontend, syncing flawlessly with the 3D avatar's skeletal animation.
+
+**Tech Stack Rationale:**
+
+- **Pinecone & Groq:** Provides the instantaneous vector retrieval and high-speed generation necessary for a responsive, voice-driven user interface.
+- **Serverless TTS Fallback:** ElevenLabs provides premium voice synthesis, but API quotas are unpredictable. Hardcoding a dynamic fallback routing system to Google Cloud Neural TTS guarantees 100% uptime for the portfolio's interactive widget.
+- **Three.js & @pixiv/three-vrm:** Chosen to render and animate the skeletal mesh of the 3D avatar interactively in the browser without inducing massive WebGL overhead.
+
+---
+
+### 4. Engineering: AI Wedding Image Culling Suite
 
 [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/AI-Wedding-Culling-Suite.git) | [View Portfolio Case Study](/projects/ai-wedding-culling)
 
@@ -75,32 +92,15 @@ Below is a detailed technical overview of my core engineering systems and resear
 
 ---
 
-### 4. Engineering: Voice-Enabled RAG Architecture
+### 5. Engineering: CallSentry Native Android Security
 
-[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/voice-rag-backend.git) | [View Portfolio Case Study](/projects/voice-rag-assistant)
+[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/CallSentry.git) | [View Portfolio Case Study](/projects/callsentry)
 
-**The Challenge:** Static portfolios fail to convey the depth of engineering work. I needed a production-grade conversational AI that could answer complex technical questions about my work in multiple languages, with zero hallucinations, natively integrated into the site's UI.
+**The Challenge:** Standard Android privacy apps often rely on cross-platform wrappers or route data through external servers, leading to latency and severe privacy risks. I needed a system-level interceptor that operates entirely natively on-device, offering strict whitelist blocking while ensuring critical emergency calls can bypass "Do Not Disturb" rules.
 
-**Technical Overview & Flow:** The pipeline begins with a custom Node.js ETL script that chunks my portfolio markdown files, embeds them via Google's `text-embedding-004`, and indexes them into a Pinecone vector database. On the frontend, a 3D VRM avatar captures user voice/text and POSTs it to a Vercel Serverless Function. The backend manages conversational memory, executing a _Contextualize Question_ step via Groq to handle pronouns. It then retrieves the top Pinecone chunks and generates a strictly English response. Finally, the response routes through a multi-tier TTS fallback chain (ElevenLabs to Google Cloud TTS) and streams base64 audio back to the frontend, syncing flawlessly with the 3D avatar's skeletal animation.
-
-**Tech Stack Rationale:**
-
-- **Pinecone & Groq:** Provides the instantaneous vector retrieval and high-speed generation necessary for a responsive, voice-driven user interface.
-- **Serverless TTS Fallback:** ElevenLabs provides premium voice synthesis, but API quotas are unpredictable. Hardcoding a dynamic fallback routing system to Google Cloud Neural TTS guarantees 100% uptime for the portfolio's interactive widget.
-- **Three.js & @pixiv/three-vrm:** Chosen to render and animate the skeletal mesh of the 3D avatar interactively in the browser without inducing massive WebGL overhead.
-
----
-
-### 5. Engineering: Orbit Workspace (Softsensor.ai)
-
-[<i class="fas fa-fw fa-link"></i> Live Site](https://www.orbitworkspace.xyz/) | [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/orbit-workspace) | [View Portfolio Case Study](/projects/orbit-workspace)
-
-**The Challenge:** Enterprise workspace collaboration platforms require highly scalable backends and real-time synchronization to ensure seamless task management and instant notifications for all users.
-
-**Technical Overview & Flow:** I architected a live full-stack enterprise project management platform. The highly scalable backend was built using Python and FastAPI, employing OOPs concepts and Data Structures to optimize assignment algorithms. The frontend was developed in React.js, integrating real-time WebSockets and Redis for instant notifications and task tracking. I designed and executed automated test scripts using Pytest for functional and integration testing across REST APIs. Furthermore, I ensured continuous integration by setting up automated CI/CD pipelines via GitHub Actions.
+**Technical Overview & Flow:** CallSentry is built strictly natively, executing directly within the OS environment. The app registers low-level **Broadcast Receivers** and **Notification Listener Services** to seamlessly monitor incoming telephony states. When a call arrives, the background service immediately queries an encrypted local database. If the number is restricted, the call is dropped or silenced dynamically. Conversely, the Emergency Breakthrough algorithm intelligently overrides OS-level restrictions to ensure vital contacts reach the user instantly.
 
 **Tech Stack Rationale:**
 
-- **Python & FastAPI:** Provided the high-performance, asynchronous capabilities needed for a scalable enterprise backend.
-- **React.js, WebSockets, & Redis:** Enabled a dynamic frontend with instant real-time notifications and efficient task tracking.
-- **Pytest & GitHub Actions:** Ensured robustness and reliability through comprehensive automated testing and continuous integration pipelines.
+- **Native Kotlin & Jetpack Compose:** Cross-platform tools (Flutter/React Native) are too abstracted for deep system-level APIs. Kotlin provides direct access to Android's `TelephonyManager`, while Compose ensures a highly reactive, state-driven UI.
+- **MVVM & Room DB:** The Model-View-ViewModel architecture combined with Kotlin Coroutines provides asynchronous, thread-safe access to the encrypted Room Database, resulting in zero-latency execution during high-stress call events.

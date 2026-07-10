@@ -15,16 +15,20 @@ const Publications = () => {
     <div>
       <h1 className="page__title">Research</h1>
       <div className="premium-grid">
-        {publications.map((pub, index) => (
-          <article key={index} className="premium-card">
-            <h2 className="archive__item-title">
-              <Link to={`/research/${pub.slug}`}>{pub.data.title}</Link>
-            </h2>
-            <p className="archive__item-excerpt">{pub.data.excerpt}</p>
-            <p>
-              <Link to={`/research/${pub.slug}`} className="premium-btn">Read Publication</Link>
-            </p>
-          </article>
+        {publications.map((pub) => (
+          <Link 
+            key={pub.slug} 
+            to={`/research/${pub.slug}`} 
+            style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }}
+          >
+            <article className="premium-card" style={{ flex: 1 }}>
+              <h2 className="archive__item-title">
+                {pub.data.title}
+              </h2>
+              <p className="archive__item-excerpt">{pub.data.excerpt}</p>
+              <div className="premium-btn" style={{ marginTop: 'auto', display: 'inline-block' }}>Read More</div>
+            </article>
+          </Link>
         ))}
       </div>
     </div>

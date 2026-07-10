@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Masthead from './components/Masthead.jsx';
 import Sidebar from './components/Sidebar.jsx';
 import Footer from './components/Footer.jsx';
+import BottomNav from './components/BottomNav.jsx';
 
 import About from './pages/About.jsx';
 import Experience from './pages/Experience.jsx';
@@ -37,6 +38,7 @@ const App = () => {
         </div>
       </div>
       
+      <BottomNav />
       <Footer />
     </>
   );

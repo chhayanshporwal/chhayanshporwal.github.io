@@ -1,14 +1,49 @@
 ---
-title: "AI4Life Challenge 2025"
-seo_title: "AI4Life Challenge | Research Publications"
-description: "Research output for AI4Life Challenge 2025."
-excerpt: "Research outputs for AI4Life Challenge."
+title: "AI4Life Calcium Imaging Denoising — Global Rank 2"
+seo_title: "AI4Life Grand Challenge Global Rank 2 | PyTorch 3D Noise2Void Denoising"
+description: "Self-supervised 3D Noise2Void denoising pipeline built with PyTorch and Docker for calcium imaging video restoration. Achieved Global Rank 2 in the AI4Life International Grand Challenge."
 collection: publications
 date: "2024-05-01"
+excerpt: 'Self-supervised 3D Noise2Void modeling for high stSNR calcium imaging video restoration. Achieved Global Rank 2 in the AI4Life International Grand Challenge.'
 ---
 
-[<i class="fas fa-fw fa-link"></i> View Challenge Results](https://ai4life-cidc25.grand-challenge.org/challenge-results/)
+[<i class="fas fa-fw fa-link"></i> View Challenge Results](https://ai4life-cidc25.grand-challenge.org/challenge-results/) | [<i class="fab fa-fw fa-github"></i> View Source Code](https://github.com/chhayanshporwal/3d-n2v-calcium-denoising)
 
-This publication summarizes my findings and research outputs for the AI4Life Grand Challenge 2025. 
+**Summary:** A competitive research project focused on developing self-supervised machine learning models to denoise high-resolution biological calcium imaging — achieving **Global Rank 2**.
 
-The full results of the challenge are published at the link above.
+*   **Problem:** High-resolution biological calcium imaging suffers from severe noise, and acquiring clean "ground truth" data for supervised machine learning is practically impossible in this domain.
+*   **Solution:** Built a self-supervised Noise2Void (N2V) model utilizing PyTorch for denoising high-resolution 3D calcium imaging data. The model extracts clean signals while strictly preserving the spatial and temporal integrity of the biological data. Evaluated efficacy using stSNR, PSNR, and SI-PSNR metrics.
+*   **Tech Stack:** Python, PyTorch, 3D Noise2Void, Docker, NumPy, SciPy.
+*   **Outcome:** Successfully containerized the final pipeline via Docker for deployment and evaluation on the Grand Challenge platform. Achieved **Global Rank 2** by ensuring robust generalization across unseen datasets.
+
+### Denoising Pipeline Architecture
+
+```mermaid
+flowchart TD
+    A["📥 Raw 3D TIFF Stack\n(Noisy Calcium Imaging)"] --> B["Preprocessing\n(Normalization + Patching)"]
+    
+    B --> C["3D Noise2Void\n(Self-Supervised)"]
+    
+    subgraph "N2V Training Loop (PyTorch)"
+        C --> D["Blind-Spot Masking\n(Random Pixel Exclusion)"]
+        D --> E["3D UNet Encoder-Decoder"]
+        E --> F["Loss: MSE on\nMasked Pixels Only"]
+        F -->|"Backprop"| E
+    end
+    
+    E --> G["Denoised 3D Volume"]
+    
+    G --> H["Evaluation Metrics"]
+    
+    subgraph "Quality Assessment"
+        H --> I["stSNR\n(Spatio-temporal SNR)"]
+        H --> J["PSNR\n(Peak Signal-to-Noise)"]
+        H --> K["SI-PSNR\n(Scale-Invariant)"]
+    end
+    
+    G --> L["Docker Container\n(Reproducible Pipeline)"]
+    L --> M["🏆 Grand Challenge\nSubmission Platform"]
+    M --> N["Global Rank 2"]
+```
+
+*   **What I learned:** Acquired advanced skills in handling massive 3D scientific datasets, tuning self-supervised machine learning models without ground truth labels, and strictly adhering to competitive research deployment standards using Docker.

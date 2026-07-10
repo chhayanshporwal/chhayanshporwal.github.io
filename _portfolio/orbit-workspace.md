@@ -2,9 +2,9 @@
 title: "Orbit Workspace"
 seo_title: "Orbit Workspace | Enterprise Collaboration & Real-Time Task Management"
 description: "A live full-stack enterprise project management platform with a scalable Python/FastAPI backend and a React.js frontend, integrating real-time WebSockets and Redis."
-excerpt: "A scalable enterprise collaboration platform featuring real-time task management and instant notifications."
+excerpt: "Full-stack enterprise workspace collaboration platform built with Python/FastAPI, React.js, and live WebSockets for real-time task management."
 collection: portfolio
-date: "2024-03-01"
+date: "2024-05-01"
 ---
 
 [<i class="fas fa-fw fa-link"></i> Live Site](https://www.orbitworkspace.xyz/) | [<i class="fab fa-fw fa-github"></i> View Source Code](https://github.com/chhayanshporwal/orbit-workspace)

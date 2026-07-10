@@ -14,7 +14,6 @@ const About = () => {
   const content = stripFrontmatter(rawContent);
   return (
     <div>
-      <h1 className="page__title">Chhayansh Porwal</h1>
       <ReactMarkdown 
         remarkPlugins={[remarkGfm]} 
         rehypePlugins={[rehypeRaw]}

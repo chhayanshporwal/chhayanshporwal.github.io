@@ -15,16 +15,20 @@ const Portfolio = () => {
     <div>
       <h1 className="page__title">Projects</h1>
       <div className="premium-grid">
-        {projects.map((project, index) => (
-          <article key={index} className="premium-card">
-            <h2 className="archive__item-title">
-              <Link to={`/projects/${project.slug}`}>{project.data.title}</Link>
-            </h2>
-            <p className="archive__item-excerpt">{project.data.excerpt}</p>
-            <p>
-              <Link to={`/projects/${project.slug}`} className="premium-btn">Read Case Study</Link>
-            </p>
-          </article>
+        {projects.map((project) => (
+          <Link 
+            key={project.slug} 
+            to={`/projects/${project.slug}`} 
+            style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }}
+          >
+            <article className="premium-card" style={{ flex: 1 }}>
+              <h2>
+                {project.data.title}
+              </h2>
+              <p className="archive__item-excerpt">{project.data.excerpt}</p>
+              <div className="premium-btn" style={{ marginTop: 'auto', display: 'inline-block' }}>Read More</div>
+            </article>
+          </Link>
         ))}
       </div>
     </div>

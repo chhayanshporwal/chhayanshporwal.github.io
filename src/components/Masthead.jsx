@@ -22,12 +22,11 @@ const Masthead = () => {
       <div className="masthead__inner-wrap">
         <div className="masthead__menu">
           <nav id="site-nav" className="greedy-nav">
-            <NavLink className="site-title site-title--desktop" to="/">Chhayansh Porwal | AI Enthusiast & Software Developer</NavLink>
+            <NavLink className="site-title site-title--desktop" to="/" style={{fontWeight: 700}}>Chhayansh Porwal</NavLink>
             <NavLink className="site-title site-title--mobile" to="/">Chhayansh Porwal</NavLink>
             <a id="theme-toggle-mobile" className="theme-toggle-mobile" role="button" aria-labelledby="theme-icon" onClick={toggleTheme}>
               <i className="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i>
             </a>
-            <button><span className="navicon"></span></button>
             <ul className="visible-links">
               <li className="masthead__menu-item">
                 <NavLink to="/">About & Skills</NavLink>

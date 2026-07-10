@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════
- * ANNAI (案内) — Voice RAG Chat Widget
+ * MAYA — Voice RAG Chat Widget
  * 
  * Self-contained module for the portfolio chat assistant.
  * Features:
@@ -54,8 +54,6 @@
   let vrmAnimId = null;
   let isVrmHovered = false;
   let annaiState = 'awake'; /* 'awake', 'sleeping', 'chatting' */
-  let sleepTimer = null;
-  const SLEEP_DELAY = 15000; /* 15 seconds */
   let isTransitioningToSleep = false;
   let hasWaved = false; /* Track if she has waved already during this interaction */
 
@@ -144,12 +142,7 @@
     const maxAttempts = 50; // 50 × 100ms = 5 seconds
 
     function tryInit3D() {
-      // Optimiziation: Drop 3D model on mobile/tablet screens for performance
-      if (window.innerWidth <= 768) {
-        console.log('Maya: Mobile screen detected. Skipping 3D VRM for optimization.');
-        renderFallbackAvatar(container);
-        return;
-      }
+      // Optimization removed: Always load 3D VRM even on mobile screens so Maya is visible everywhere.
 
       if (typeof THREE !== 'undefined' && typeof THREE.GLTFLoader !== 'undefined') {
         try {
@@ -218,8 +211,20 @@
     rimLight.position.set(0, 2, -3);
     vrmScene.add(rimLight);
 
-    // Clock for animations
-    vrmClock = new THREE.Clock();
+    // Custom clock to avoid THREE.Clock deprecation warning
+    vrmClock = {
+      startTime: performance.now(),
+      lastTime: performance.now(),
+      getDelta: function() {
+        const now = performance.now();
+        const delta = (now - this.lastTime) / 1000;
+        this.lastTime = now;
+        return delta;
+      },
+      getElapsedTime: function() {
+        return (performance.now() - this.startTime) / 1000;
+      }
+    };
 
     // Start render loop
     animateVRM();
@@ -554,7 +559,6 @@
 
     if (isOpen) {
       annaiState = 'chatting';
-      clearTimeout(sleepTimer);
       if (wakeArrow()) wakeArrow().classList.remove('annai-visible');
       
       panel.classList.add('annai-open');
@@ -580,23 +584,11 @@
 
   // ─── Lifecycle Methods ─────────────────────────────────────────
   function resetSleepTimer() {
-    clearTimeout(sleepTimer);
-    if (annaiState !== 'chatting') {
-      sleepTimer = setTimeout(goToSleep, SLEEP_DELAY);
-    }
+    // Disabled: Maya is always awake
   }
 
   function goToSleep() {
-    if (annaiState === 'chatting' || isTransitioningToSleep) return;
-    
-    annaiState = 'sleeping';
-    const tip = tooltip();
-    if (tip) tip.classList.remove('annai-visible');
-    
-    /* Just fade out while standing — no lie-down animation */
-    const container = avatarContainer();
-    if (container) container.classList.add('annai-sleeping');
-    if (wakeArrow()) wakeArrow().classList.add('annai-visible');
+    // Disabled: Maya is always awake
   }
 
   function wakeUp() {
@@ -610,7 +602,6 @@
     
     // Switch to awake state
     annaiState = 'awake';
-    resetSleepTimer();
   }
 
   // ─── Message Handling ─────────────────────────────────────────
@@ -685,7 +676,7 @@
     } catch (error) {
       console.error('Maya chat error:', error);
       if (typingEl) typingEl.remove();
-      appendError(error.message && !error.message.includes('Failed to fetch') ? error.message : "Sorry, I couldn't connect. Please check your network and try again.");
+      appendError(error.message && !error.message.includes('Failed to fetch') ? error.message : "Maya's backend is currently waking up from serverless sleep or is offline. Please try again in a few seconds.");
     } finally {
       isLoading = false;
       updateSendButton();

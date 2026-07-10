@@ -24,6 +24,18 @@ const CV = () => {
 
   return (
     <div>
+      <h1 className="page__title">Curriculum Vitae</h1>
+      
+      <div style={{ marginBottom: '2rem', border: '1px solid var(--text-muted)', borderRadius: '8px', overflow: 'hidden', height: '450px' }}>
+        <iframe 
+          src="/Chhayansh%20Porwal-CV.pdf" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 'none' }}
+          title="CV Preview"
+        />
+      </div>
+
       <ReactMarkdown 
         remarkPlugins={[remarkGfm]} 
         rehypePlugins={[rehypeRaw]}

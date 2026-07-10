@@ -9,7 +9,7 @@
     <!-- Original Jekyll CSS -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/academicons.css" />
-    <link rel="stylesheet" href="/assets/css/chat-widget.css" />
+    <link rel="stylesheet" href="/assets/css/chat-widget.css?v=10" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +38,7 @@
     </button>
     <div id="annai-avatar-container" role="button" aria-label="Open Annai AI Assistant" tabindex="0"></div>
     <div id="annai-tooltip">
-      Hi, I am <strong>Annai</strong>! Ask me anything about Chhayansh's work. ✨
+      Hi, I am <strong>Maya</strong>! Ask me anything about Chhayansh's work. ✨
     </div>
     
     <div id="annai-chat-panel" role="dialog" aria-label="Annai AI Chat Assistant">
@@ -51,7 +51,7 @@
           </svg>
         </div>
         <div class="annai-header-info">
-          <div class="annai-header-name">Annai 案内</div>
+          <div class="annai-header-name">Maya</div>
           <div class="annai-header-status">Online • AI Assistant</div>
         </div>
         <button class="annai-close-btn" id="annai-close-btn" aria-label="Close chat">
@@ -69,19 +69,12 @@
               <path d="M12 1v2M8.5 2.5l1 1.7M15.5 2.5l-1 1.7"/>
             </svg>
           </div>
-          <h3>Konnichiwa! I'm Annai 👋</h3>
-          <p>I know everything about Chhayansh's projects, skills, and experience. Ask me in any language — English, Hindi, or Japanese!</p>
+          <h3>Hello! I'm Maya 👋</h3>
+          <p>I'm a Voice-Enabled RAG Assistant powered by Groq, Pinecone, and Vercel Serverless. I have complete knowledge of Chhayansh's projects, skills, and experience. Ask me anything!</p>
         </div>
       </div>
       <div class="annai-input-area">
         <input type="text" class="annai-input" id="annai-input" placeholder="Ask about Chhayansh's work..." autocomplete="off"/>
-        <button class="annai-btn annai-mic-btn" id="annai-mic-btn" aria-label="Voice input">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/>
-            <line x1="8" y1="23" x2="16" y2="23"/>
-          </svg>
-        </button>
         <button class="annai-btn annai-speaker-btn" id="annai-speaker-btn" aria-label="Speaker">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
@@ -96,7 +89,8 @@
       </div>
     </div>
     
-    <script src="/assets/js/chat-widget.js"></script>
+    <!-- Three.js and VRM are bundled via src/main.jsx -->
+    <script src="/assets/js/chat-widget.js?v=7"></script>
     
     <script type="module" src="/src/main.jsx"></script>
     
