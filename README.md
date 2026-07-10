@@ -17,7 +17,7 @@ Annai was designed and engineered entirely from scratch to serve as my interacti
 2. **High-Precision Voice Engine:** Speech-to-text is handled directly in the browser via the native Web Speech API. Text-to-speech is powered by Google Cloud's Neural2 engine, delivering a professional, warm female voice.
 3. **Serverless RAG Backend:** Annai's "brain" is hosted on a Vercel Serverless Node.js backend. Her knowledge base is populated via a custom Node.js ETL pipeline that chunks my portfolio data, embeds it via `gemini-embedding-001`, and stores it in a Pinecone Vector Database.
 4. **Semantic Retrieval:** When asked a question, Annai performs a semantic similarity search across her vector space to pull the most relevant facts about my projects.
-5. **Dynamic Generation:** She uses Google's `gemini-flash-latest` Large Language Model to formulate a natural response based strictly on the retrieved context, ensuring 0% hallucination.
+5. **Dynamic Generation:** She uses xAI's `grok-beta` Large Language Model to formulate a natural response based strictly on the retrieved context, ensuring 0% hallucination.
 
 *Note: Annai's backend source code is located in a separate repository: [voice-rag-backend](https://github.com/chhayanshporwal/voice-rag-backend).*
 
@@ -36,7 +36,7 @@ Annai was designed and engineered entirely from scratch to serve as my interacti
 - **Framework:** Jekyll (GitHub Pages)
 - **Styling:** Custom SCSS & TailwindCSS Utilities
 - **3D Graphics:** Three.js
-- **Assistant Stack:** Web Speech API, Google Cloud Neural TTS, Pinecone DB, Gemini 1.5 Flash
+- **Assistant Stack:** Web Speech API, Google Cloud Neural TTS, Pinecone DB, Grok
 
 ## Local Development
 

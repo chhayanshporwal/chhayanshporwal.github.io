@@ -14,14 +14,14 @@ You can also [download my full CV as a PDF](/Chhayansh%20Porwal-CV.pdf).
 Education
 ======
 * **B.Tech in Computer Science Engineering**, Rajasthan Technical University (RTU), Kota — 2023–2027
-  * CGPA: 8.81
+  * CGPA: 8.73
 
 Work Experience
 ======
-* **Software Engineering Intern — Syon Technologies**
-  * Developed the core ML matching engine for the Teacher Recruitment System using SentenceTransformers and FastAPI.
-  * Engineered a semantic embedding microservice for automated resume screening and profile coaching.
-  * Integrated the ML service with a Next.js and Node.js/Prisma backend via REST APIs and Redis.
+* **Software Engineer Intern — Softsensor.ai**
+  * Architected a live full-stack enterprise project management platform using Python, FastAPI, and React.js.
+  * Developed a dynamic React.js frontend with real-time WebSockets and Redis.
+  * Designed automated test scripts using Pytest for REST APIs and set up CI/CD via GitHub Actions.
 
 * **Computer Vision Developer Intern — Fotographiya (iStart-incubated)**
   * Built an AI-powered image culling backend using Python/FastAPI for a premium wedding photography startup.
@@ -37,9 +37,9 @@ Technical Skills
 
 Achievements
 ======
-* 🏆 **Global Rank 2** — AI4Life International Grand Challenge
-* 🎯 **Top 8% Nationwide** — AlgoUniversity Tech Fellowship (ATF 2025)
-* 📊 **CGPA: 8.81** — RTU, Kota
+* 🏆 **Global Rank 2** — [AI4Life International Grand Challenge](https://ai4life-cidc25.grand-challenge.org/challenge-results/)
+
+* 📊 **CGPA: 8.73** — RTU, Kota
 
 Publications
 ======

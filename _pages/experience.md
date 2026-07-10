@@ -5,13 +5,14 @@ permalink: /experience/
 author_profile: true
 ---
 
-## Software Engineering Intern — Syon Technologies
-*Full-Stack ML Platform Development · Continued post-internship*
+## Software Engineer Intern — Softsensor.ai
+*Orbit (Enterprise Workspace Collaboration Platform) · 15 May 2026 – 30 June 2026*
 
-*   Developed the core machine learning matching engine to intelligently pair candidate profiles with school requirements based on semantic context.
-*   Engineered a dedicated Python/FastAPI microservice utilizing SentenceTransformers to generate semantic embeddings for automated resume screening and profile coaching.
-*   Integrated the ML service with a Next.js and Node.js/Prisma backend architecture, utilizing REST APIs and Redis for efficient data handoffs.
-*   **Tech Stack:** Next.js, Node.js, Prisma, TypeScript, Python, FastAPI, SentenceTransformers, Redis.
+*   Architected a live full-stack enterprise project management platform using Python, FastAPI, and React.js, employing OOPs concepts and Data Structures to optimize assignment algorithms.
+*   Developed a dynamic React.js frontend and integrated real-time WebSockets and Redis for instant notifications and task tracking.
+*   Designed and executed automated test scripts using Pytest to perform functional and integration testing across REST APIs.
+*   Ensured continuous integration by setting up automated CI/CD pipelines via GitHub Actions.
+*   **Tech Stack:** Python, FastAPI, React.js, WebSockets, Redis, Pytest, CI/CD, GitHub Actions.
 
 ---
 

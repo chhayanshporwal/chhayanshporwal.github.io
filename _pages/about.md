@@ -7,17 +7,17 @@ permalink: /
 author_profile: true
 ---
 
-I am a 3rd-year B.Tech Computer Science Engineering student at Rajasthan Technical University (CGPA: 8.81) and a Software Engineer specializing in native Android architecture, computer vision pipelines, and full-stack ML systems. My technical philosophy centers on deep engineering fundamentals — moving beyond surface-level integrations to understand system-level APIs and custom software architecture.
+I am a 3rd-year B.Tech Computer Science Engineering student at Rajasthan Technical University (CGPA: 8.73) and a Software Engineer specializing in native Android architecture, computer vision pipelines, and full-stack ML systems. My technical philosophy centers on deep engineering fundamentals — moving beyond surface-level integrations to understand system-level APIs and custom software architecture.
 
-I have hands-on industry experience building AI-powered products: from chaining YOLOv8 + CLIP + MTCNN for an automated wedding photo culling system at Fotographiya, to architecting ML-driven matching engines with SentenceTransformers at Syon Technologies. My competitive research work on 3D Noise2Void denoising earned **Global Rank 2** at the AI4Life International Grand Challenge.
+I have hands-on industry experience building AI-powered products: from chaining YOLOv8 + CLIP + MTCNN for an automated wedding photo culling system at Fotographiya, to architecting Orbit Workspace, a live full-stack enterprise project management platform with React.js, Python, and FastAPI at Softsensor.ai. My competitive research work on 3D Noise2Void denoising earned **Global Rank 2** at the AI4Life International Grand Challenge.
 
 I am currently studying the Japanese language and actively preparing my engineering foundation to enter the Japanese tech market as a fresh graduate.
 
 ## Achievements
 
-- 🏆 **Global Rank 2** — AI4Life International Grand Challenge (Calcium Imaging Denoising)
-- 🎯 **Top 8% Nationwide** — AlgoUniversity Tech Fellowship (ATF 2025)
-- 📊 **CGPA: 8.81** — Rajasthan Technical University, B.Tech CSE (Till 5th Semester)
+- 🏆 **Global Rank 2** — [AI4Life International Grand Challenge](https://ai4life-cidc25.grand-challenge.org/challenge-results/) (Calcium Imaging Denoising)
+
+- 📊 **CGPA: 8.73** — Rajasthan Technical University, B.Tech CSE (Till 5th Semester)
 
 ---
 
@@ -27,7 +27,7 @@ Below is a detailed technical overview of my core engineering systems and resear
 
 ### 1. Research: 3D Calcium Imaging Denoising (Global Rank 2)
 
-[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/3d-n2v-calcium-denoising.git) | [Read Full Publication](/publications/ai4life-grand-challenge)
+[<i class="fas fa-fw fa-trophy"></i> View Challenge Results](https://ai4life-cidc25.grand-challenge.org/challenge-results/) | [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/3d-n2v-calcium-denoising.git) | [Read Full Publication](/publications/ai4life-grand-challenge)
 
 **The Challenge:** In biological research, capturing volumetric (3D) video of live cells requires extremely low light to prevent phototoxicity, resulting in massive visual noise. Standard supervised learning is impossible because acquiring clean "ground truth" reference data physically destroys the cellular sample.
 
@@ -75,32 +75,32 @@ Below is a detailed technical overview of my core engineering systems and resear
 
 ---
 
-### 4. Engineering: Annai Voice-Enabled RAG Architecture
+### 4. Engineering: Voice-Enabled RAG Architecture
 
 [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/voice-rag-backend.git) | [View Portfolio Case Study](/portfolio/voice-rag-assistant/)
 
 **The Challenge:** Static portfolios fail to convey the depth of engineering work. I needed a production-grade conversational AI that could answer complex technical questions about my work in multiple languages, with zero hallucinations, natively integrated into the site's UI.
 
-**Technical Overview & Flow:** The pipeline begins with a custom Node.js ETL script that chunks my portfolio markdown files, embeds them via Google's `text-embedding-004`, and indexes them into a Pinecone vector database. On the frontend, a 3D VRM avatar captures user voice/text and POSTs it to a Vercel Serverless Function. The backend manages conversational memory, executing a _Contextualize Question_ step via Gemini to handle pronouns. It then retrieves the top Pinecone chunks and generates a strictly English or Hindi response. Finally, the response routes through a multi-tier TTS fallback chain (ElevenLabs to Google Cloud TTS) and streams base64 audio back to the frontend, syncing flawlessly with the 3D avatar's skeletal animation.
+**Technical Overview & Flow:** The pipeline begins with a custom Node.js ETL script that chunks my portfolio markdown files, embeds them via Google's `text-embedding-004`, and indexes them into a Pinecone vector database. On the frontend, a 3D VRM avatar captures user voice/text and POSTs it to a Vercel Serverless Function. The backend manages conversational memory, executing a _Contextualize Question_ step via Grok to handle pronouns. It then retrieves the top Pinecone chunks and generates a strictly English or Hindi response. Finally, the response routes through a multi-tier TTS fallback chain (ElevenLabs to Google Cloud TTS) and streams base64 audio back to the frontend, syncing flawlessly with the 3D avatar's skeletal animation.
 
 **Tech Stack Rationale:**
 
-- **Pinecone & Gemini 1.5 Flash:** Provides the instantaneous vector retrieval and high-speed generation necessary for a responsive, voice-driven user interface.
+- **Pinecone & Grok:** Provides the instantaneous vector retrieval and high-speed generation necessary for a responsive, voice-driven user interface.
 - **Serverless TTS Fallback:** ElevenLabs provides premium voice synthesis, but API quotas are unpredictable. Hardcoding a dynamic fallback routing system to Google Cloud Neural TTS guarantees 100% uptime for the portfolio's interactive widget.
 - **Three.js & @pixiv/three-vrm:** Chosen to render and animate the skeletal mesh of the 3D avatar interactively in the browser without inducing massive WebGL overhead.
 
 ---
 
-### 5. Engineering: AI Teacher Recruitment System
+### 5. Engineering: Orbit Workspace (Softsensor.ai)
 
-[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/teacher-recruitment-system.git) | [View Portfolio Case Study](/portfolio/teacher-recruitment-system/)
+[<i class="fas fa-fw fa-link"></i> Live Site](https://www.orbitworkspace.xyz/) | [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/orbit-workspace) | [View Portfolio Case Study](/portfolio/orbit-workspace/)
 
-**The Challenge:** The hiring process for schools is highly fragmented, lacking a unified platform to simultaneously handle candidate applications, school job postings, and overarching system administration—let alone intelligently match candidates to opportunities based on semantic meaning rather than just keyword matching.
+**The Challenge:** Enterprise workspace collaboration platforms require highly scalable backends and real-time synchronization to ensure seamless task management and instant notifications for all users.
 
-**Technical Overview & Flow:** I architected a full-stack web platform with an integrated ML matching engine to centralize the hiring process. The system operates on two distinct backends. The core application logic (user management, applications, roles) runs on a **Node.js/Prisma** backend. When a school posts a job or a teacher updates a profile, the data is pushed via REST APIs to a dedicated **Python/FastAPI microservice**. This ML service utilizes **SentenceTransformers** to generate semantic embeddings of resumes and job descriptions. By calculating the cosine similarity between candidate profiles and job requirements, the system outputs ranked, intelligent matches.
+**Technical Overview & Flow:** I architected a live full-stack enterprise project management platform. The highly scalable backend was built using Python and FastAPI, employing OOPs concepts and Data Structures to optimize assignment algorithms. The frontend was developed in React.js, integrating real-time WebSockets and Redis for instant notifications and task tracking. I designed and executed automated test scripts using Pytest for functional and integration testing across REST APIs. Furthermore, I ensured continuous integration by setting up automated CI/CD pipelines via GitHub Actions.
 
 **Tech Stack Rationale:**
 
-- **Next.js, Node.js, & Prisma:** Selected for the core application to ensure type safety across the stack with TypeScript and rapidly scale the complex relational database (candidates, schools, admins, applications) using Prisma ORM.
-- **FastAPI & SentenceTransformers:** Python is mandatory for the ML matching engine, but integrating it directly into the Node.js monolith would block the event loop. Separating the ML workload into a FastAPI microservice allows heavy embedding generation to happen asynchronously without freezing the frontend user portals.
-- **Redis:** Used to cache the generated embeddings and facilitate high-speed data handoffs between the TypeScript and Python services.
+- **Python & FastAPI:** Provided the high-performance, asynchronous capabilities needed for a scalable enterprise backend.
+- **React.js, WebSockets, & Redis:** Enabled a dynamic frontend with instant real-time notifications and efficient task tracking.
+- **Pytest & GitHub Actions:** Ensured robustness and reliability through comprehensive automated testing and continuous integration pipelines.

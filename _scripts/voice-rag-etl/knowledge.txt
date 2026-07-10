@@ -1,5 +1,5 @@
 Identity and Demographics:
-Chhayansh Porwal is a 3rd-year B.Tech Computer Science Engineering student at Rajasthan Technical University (CGPA: 8.81). He is a Software Engineer specializing in native Android architecture, computer vision pipelines, and full-stack ML systems. His technical philosophy centers on deep engineering fundamentals.
+Chhayansh Porwal is a 3rd-year B.Tech Computer Science Engineering student at Rajasthan Technical University (CGPA: 8.73). He is a Software Engineer specializing in native Android architecture, computer vision pipelines, and full-stack ML systems. His technical philosophy centers on deep engineering fundamentals.
 
 Technical Skills:
 - Mobile Development: Native Android, Kotlin, Jetpack Compose, MVVM Architecture, Room Databases, Background Services.
@@ -9,12 +9,13 @@ Technical Skills:
 
 Achievements:
 - Global Rank 2 — AI4Life International Grand Challenge (Calcium Imaging Denoising)
-- Top 8% Nationwide — AlgoUniversity Tech Fellowship (ATF 2025)
-- CGPA: 8.81 — Rajasthan Technical University, B.Tech CSE (Till 5th Semester)
+
+- CGPA: 8.73 — Rajasthan Technical University, B.Tech CSE (Till 5th Semester)
 
 Project: 3D Calcium Imaging Denoising (AI4Life International Grand Challenge)
 Chhayansh secured Global Rank 2 by developing a self-supervised image restoration pipeline to denoise volumetric microscopy data. He utilized a 3D Noise2Void (N2V) neural network in PyTorch. The pipeline mathematically masks random pixels and forces the UNet encoder-decoder architecture to predict missing values based strictly on spatial neighborhoods. He used Docker for deployment.
 GitHub Link: https://github.com/chhayanshporwal/3d-n2v-calcium-denoising.git
+Challenge Results Link: https://ai4life-cidc25.grand-challenge.org/challenge-results/
 
 Project: CallSentry (Android Application)
 CallSentry is a system-level Android security application built strictly natively in Kotlin. It executes directly within the OS environment using Broadcast Receivers and Notification Listener Services. It drops or silences restricted numbers dynamically and features an Emergency Breakthrough algorithm. It uses Jetpack Compose for UI, MVVM architecture, and an encrypted Room Database.
@@ -25,9 +26,9 @@ An automated, high-throughput computer vision pipeline that orchestrates special
 GitHub Link: https://github.com/chhayanshporwal/AI-Wedding-Culling-Suite.git
 
 Project: Annai Voice-Enabled RAG Architecture
-Annai is the self-aware, intelligent Voice-RAG conversational agent that lives on Chhayansh's portfolio website. She was designed and engineered entirely by Chhayansh Porwal to act as his interactive virtual representative. Annai's frontend is built using a 3D VRM Anime Avatar integrated with Three.js, executing sophisticated skeletal animations that sync with speech and user interactions. Annai's auditory capabilities are powered by the browser's Web Speech API for high-precision voice recognition, and Google Cloud's Neural2 Text-to-Speech (TTS) engine for generating a warm, professional female voice. Annai's brain runs on a Vercel Serverless Node.js backend. Her knowledge pipeline involves a custom ETL script that chunks Chhayansh's resume and portfolio data, embeds it using the gemini-embedding-001 model, and stores it in a Pinecone Vector Database. When a user speaks to Annai, her backend performs a semantic similarity search in Pinecone to retrieve relevant facts, and then dynamically generates her response using the gemini-flash-latest Large Language Model. Annai is strictly programmed to never hallucinate and answers solely based on Chhayansh's real work. She has state persistence utilizing browser sessionStorage so conversations survive page navigation.
+Annai is the self-aware, intelligent Voice-RAG conversational agent that lives on Chhayansh's portfolio website. She was designed and engineered entirely by Chhayansh Porwal to act as his interactive virtual representative. Annai's frontend is built using a 3D VRM Anime Avatar integrated with Three.js, executing sophisticated skeletal animations that sync with speech and user interactions. Annai's auditory capabilities are powered by the browser's Web Speech API for high-precision voice recognition, and Google Cloud's Neural2 Text-to-Speech (TTS) engine for generating a warm, professional female voice. Annai's brain runs on a Vercel Serverless Node.js backend. Her knowledge pipeline involves a custom ETL script that chunks Chhayansh's resume and portfolio data, embeds it, and stores it in a Pinecone Vector Database. When a user speaks to Annai, her backend performs a semantic similarity search in Pinecone to retrieve relevant facts, and then dynamically generates her response using the Grok Large Language Model. Annai is strictly programmed to never hallucinate and answers solely based on Chhayansh's real work. She has state persistence utilizing browser sessionStorage so conversations survive page navigation.
 GitHub Link: https://github.com/chhayanshporwal/voice-rag-backend.git
 
-Project: AI Teacher Recruitment System
-A full-stack web platform with an integrated ML matching engine. The core application logic runs on a Node.js/Prisma backend. A dedicated Python/FastAPI microservice uses SentenceTransformers to generate semantic embeddings of resumes and job descriptions. By calculating the cosine similarity between candidate profiles and job requirements, the system outputs ranked, intelligent matches. Redis is used to cache generated embeddings.
-GitHub Link: https://github.com/chhayanshporwal/teacher-recruitment-system.git
+Project: Orbit Workspace (Softsensor.ai)
+An enterprise workspace collaboration platform designed for seamless task management and real-time synchronization. The core application logic runs on a highly scalable Python/FastAPI backend, utilizing OOPs concepts and Data Structures to optimize assignment algorithms. The frontend is built in React.js and incorporates real-time WebSockets and Redis for instant notifications and task tracking. The system includes robust automated test scripts using Pytest across REST APIs and continuous integration pipelines via GitHub Actions.
+GitHub Link: https://github.com/chhayanshporwal/orbit-workspace
