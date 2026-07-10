@@ -8,7 +8,7 @@ Education and Academic Merits:
 - Academic Standing: CGPA of 8.73 (evaluated through the 5th semester)
 
 Core Technical Skills:
-- Programming Languages: Python, Kotlin (Native Android), JavaScript, TypeScript, C++, HTML5, CSS3, SCSS
+- Programming Languages: Python, Kotlin (Native Android), JavaScript, C++, HTML, CSS, Tailwind CSS
 - Web Frameworks & APIs: Node.js, FastAPI (Python), Next.js, React.js, Express.js, REST APIs, GraphQL
 - Real-time & Databases: WebSockets, Redis (Pub/Sub and Caching), Pinecone Vector Database, Room Database (Android, Encrypted), SQLite, PostgreSQL, MongoDB
 - AI, Machine Learning & Computer Vision: PyTorch, 3D Noise2Void (N2V), YOLOv8 (Object Detection), OpenAI CLIP (ViT-L/14 Embeddings), MediaPipe FaceMesh, FaceNet, MTCNN (Facial Landmark Detection), SentenceTransformers, Text-to-Speech (TTS) integration, Speech-to-Text (STT) APIs

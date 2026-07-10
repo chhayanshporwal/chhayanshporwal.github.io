@@ -26,8 +26,8 @@ Work Experience
 
 Technical Skills
 ======
-* **Programming:** Python, Kotlin, JavaScript/TypeScript, C++
-* **Web & APIs:** Node.js, FastAPI, Next.js, HTML, CSS
+* **Programming:** Python, Kotlin, JavaScript, C++
+* **Web & APIs:** Node.js, FastAPI, Next.js, HTML, CSS, Tailwind CSS
 * **AI & ML:** YOLOv8, PyTorch, CLIP, MediaPipe, SentenceTransformers, 3D Noise2Void, Groq API, Text-to-Speech (TTS)
 * **Tools & Infra:** Git, Docker, Pinecone (Vector DB), MongoDB, Redis, PostgreSQL, Firebase
 
