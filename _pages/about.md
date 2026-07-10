@@ -27,7 +27,7 @@ Below is a detailed technical overview of my core engineering systems and resear
 
 ### 1. Research: 3D Calcium Imaging Denoising (Global Rank 2)
 
-[<i class="fas fa-fw fa-trophy"></i> View Challenge Results](https://ai4life-cidc25.grand-challenge.org/challenge-results/) | [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/3d-n2v-calcium-denoising.git) | [Read Full Publication](/publications/ai4life-grand-challenge)
+[<i class="fas fa-fw fa-trophy"></i> View Challenge Results](https://ai4life-cidc25.grand-challenge.org/challenge-results/) | [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/3d-n2v-calcium-denoising.git) | [Read Full Publication](/research/ai4life-grand-challenge)
 
 **The Challenge:** In biological research, capturing volumetric (3D) video of live cells requires extremely low light to prevent phototoxicity, resulting in massive visual noise. Standard supervised learning is impossible because acquiring clean "ground truth" reference data physically destroys the cellular sample.
 
@@ -42,7 +42,7 @@ Below is a detailed technical overview of my core engineering systems and resear
 
 ### 2. Engineering: CallSentry Native Android Security
 
-[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/CallSentry.git) | [View Portfolio Case Study](/portfolio/callsentry/)
+[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/CallSentry.git) | [View Portfolio Case Study](/projects/callsentry)
 
 **The Challenge:** Standard Android privacy apps often rely on cross-platform wrappers or route data through external servers, leading to latency and severe privacy risks. I needed a system-level interceptor that operates entirely natively on-device, offering strict whitelist blocking while ensuring critical emergency calls can bypass "Do Not Disturb" rules.
 
@@ -57,7 +57,7 @@ Below is a detailed technical overview of my core engineering systems and resear
 
 ### 3. Engineering: AI Wedding Image Culling Suite
 
-[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/AI-Wedding-Culling-Suite.git) | [View Portfolio Case Study](/portfolio/ai-wedding-culling/)
+[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/AI-Wedding-Culling-Suite.git) | [View Portfolio Case Study](/projects/ai-wedding-culling)
 
 **The Challenge:** Event photographers manually review thousands of raw shots, wasting days deleting blurry, blinking, or duplicate photos. This system replaces that manual labor by passing massive galleries through an automated, high-throughput computer vision pipeline.
 
@@ -77,15 +77,15 @@ Below is a detailed technical overview of my core engineering systems and resear
 
 ### 4. Engineering: Voice-Enabled RAG Architecture
 
-[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/voice-rag-backend.git) | [View Portfolio Case Study](/portfolio/voice-rag-assistant/)
+[<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/voice-rag-backend.git) | [View Portfolio Case Study](/projects/voice-rag-assistant)
 
 **The Challenge:** Static portfolios fail to convey the depth of engineering work. I needed a production-grade conversational AI that could answer complex technical questions about my work in multiple languages, with zero hallucinations, natively integrated into the site's UI.
 
-**Technical Overview & Flow:** The pipeline begins with a custom Node.js ETL script that chunks my portfolio markdown files, embeds them via Google's `text-embedding-004`, and indexes them into a Pinecone vector database. On the frontend, a 3D VRM avatar captures user voice/text and POSTs it to a Vercel Serverless Function. The backend manages conversational memory, executing a _Contextualize Question_ step via Grok to handle pronouns. It then retrieves the top Pinecone chunks and generates a strictly English or Hindi response. Finally, the response routes through a multi-tier TTS fallback chain (ElevenLabs to Google Cloud TTS) and streams base64 audio back to the frontend, syncing flawlessly with the 3D avatar's skeletal animation.
+**Technical Overview & Flow:** The pipeline begins with a custom Node.js ETL script that chunks my portfolio markdown files, embeds them via Google's `text-embedding-004`, and indexes them into a Pinecone vector database. On the frontend, a 3D VRM avatar captures user voice/text and POSTs it to a Vercel Serverless Function. The backend manages conversational memory, executing a _Contextualize Question_ step via Groq to handle pronouns. It then retrieves the top Pinecone chunks and generates a strictly English or Hindi response. Finally, the response routes through a multi-tier TTS fallback chain (ElevenLabs to Google Cloud TTS) and streams base64 audio back to the frontend, syncing flawlessly with the 3D avatar's skeletal animation.
 
 **Tech Stack Rationale:**
 
-- **Pinecone & Grok:** Provides the instantaneous vector retrieval and high-speed generation necessary for a responsive, voice-driven user interface.
+- **Pinecone & Groq:** Provides the instantaneous vector retrieval and high-speed generation necessary for a responsive, voice-driven user interface.
 - **Serverless TTS Fallback:** ElevenLabs provides premium voice synthesis, but API quotas are unpredictable. Hardcoding a dynamic fallback routing system to Google Cloud Neural TTS guarantees 100% uptime for the portfolio's interactive widget.
 - **Three.js & @pixiv/three-vrm:** Chosen to render and animate the skeletal mesh of the 3D avatar interactively in the browser without inducing massive WebGL overhead.
 
@@ -93,7 +93,7 @@ Below is a detailed technical overview of my core engineering systems and resear
 
 ### 5. Engineering: Orbit Workspace (Softsensor.ai)
 
-[<i class="fas fa-fw fa-link"></i> Live Site](https://www.orbitworkspace.xyz/) | [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/orbit-workspace) | [View Portfolio Case Study](/portfolio/orbit-workspace/)
+[<i class="fas fa-fw fa-link"></i> Live Site](https://www.orbitworkspace.xyz/) | [<i class="fab fa-fw fa-github"></i> Verify Code Repository](https://github.com/chhayanshporwal/orbit-workspace) | [View Portfolio Case Study](/projects/orbit-workspace)
 
 **The Challenge:** Enterprise workspace collaboration platforms require highly scalable backends and real-time synchronization to ensure seamless task management and instant notifications for all users.
 

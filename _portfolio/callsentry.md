@@ -4,6 +4,7 @@ seo_title: "CallSentry | Native Android Security Engineering — Kotlin & Jetpac
 description: "A native Kotlin Android security application engineered with Jetpack Compose, Room Database, MVVM architecture, and system-level Broadcast Receivers for proactive call privacy and emergency breakthrough."
 excerpt: "A native Android security application engineered for proactive privacy and emergency call breakthrough."
 collection: portfolio
+date: "2024-01-01"
 ---
 
 [<i class="fab fa-fw fa-github"></i> View Source Code](https://github.com/chhayanshporwal/CallSentry) | [<i class="fas fa-fw fa-download"></i> Download APK (Beta)](https://github.com/chhayanshporwal/CallSentry/releases/tag/v1.0.0-beta)
@@ -11,9 +12,8 @@ collection: portfolio
 **Summary:** A system-level Android application that balances strict communication privacy with reliable emergency contact routing.
 
 *   **Problem:** Existing call blockers either let spam through or rigidly block everything, lacking fine-grained control to ensure critical emergency calls can bypass filters safely.
-*   **Solution:** Built a native Android application using Kotlin to provide offline, privacy-first call and SMS filtering. Architected a custom background service using Broadcast Receivers and system-level permissions to intercept and evaluate incoming calls. It checks numbers against a secure local whitelist-based blocking architecture to enforce privacy controls while guaranteeing emergency contacts are routed immediately.
-*   **Tech Stack:** Kotlin, Jetpack Compose, MVVM Architecture, Room Database, Android Telephony System APIs, Broadcast Receivers.
-*   **Outcome:** Executed rapid prototyping to deliver a stable, production-ready application within a highly constrained **3-day development lifecycle**. Achieved robust, low-latency call interception without draining battery life or blocking the main UI thread.
+*   **Solution:** Built a native Android application using Kotlin to provide offline, privacy-first call and SMS filtering. Architected a custom background service using Broadcast Receivers and system-level permissions to intercept and evaluate incoming calls against secure local Whitelists and Blocklists.
+*   **Tech Stack:** `Kotlin`, `Jetpack Compose`, `MVVM Architecture`, `Room Database`, `Android Telephony System APIs`
 
 ### System Architecture
 

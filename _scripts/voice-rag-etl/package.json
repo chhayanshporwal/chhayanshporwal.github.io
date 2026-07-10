@@ -1,7 +1,7 @@
 {
   "name": "voice-rag-etl",
   "version": "1.0.0",
-  "description": "ETL pipeline for Annai voice RAG — chunks, embeds, upserts to Pinecone",
+  "description": "ETL pipeline for Nandini voice RAG — chunks, embeds, upserts to Pinecone",
   "type": "module",
   "scripts": {
     "etl": "node etl.js"

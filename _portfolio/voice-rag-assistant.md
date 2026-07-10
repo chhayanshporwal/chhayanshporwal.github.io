@@ -1,29 +1,36 @@
 ---
-title: "Annai: Voice-Enabled RAG Architecture"
-seo_title: "Annai Voice RAG Assistant | Pinecone, Grok LLM & Vercel Serverless API"
-description: "A production-grade voice-enabled RAG assistant using Pinecone vector database, Grok LLM, Vercel Serverless Functions, and Google Cloud TTS with a zero-LangChain architecture."
+title: "Nandini: Voice-Enabled RAG Architecture"
+seo_title: "Nandini Voice RAG Assistant | Pinecone, Groq LLM & Vercel Serverless API"
+description: "A production-grade voice-enabled RAG assistant using Pinecone vector database, Groq LLM, Vercel Serverless Functions, and Google Cloud TTS with a zero-LangChain architecture."
 excerpt: "A scalable, self-aware AI assistant utilizing a Pinecone Vector Database and Vercel Serverless with a highly optimized Zero-LangChain architecture."
 collection: portfolio
+date: "2024-04-01"
 ---
 
 [<i class="fab fa-fw fa-github"></i> View Source Code](https://github.com/chhayanshporwal/voice-rag-backend)
 
 ## Overview
-To demonstrate production-grade LLM engineering, I built "Annai"—a custom Retrieval-Augmented Generation (RAG) assistant integrated directly into this portfolio. Instead of utilizing basic API wrappers or heavy abstraction frameworks, this system relies on a lightweight, standalone serverless backend and a dedicated vector database to answer complex technical queries about my work with zero hallucinations. 
+To demonstrate production-grade LLM engineering, I built **"Nandini"**—a custom Retrieval-Augmented Generation (RAG) assistant integrated directly into this portfolio. Instead of utilizing basic API wrappers or heavy abstraction frameworks, this system relies on a lightweight, standalone serverless backend and a dedicated vector database to answer complex technical queries about my work with zero hallucinations. 
 
-Annai is entirely self-aware and capable of intelligently describing her own architecture and creation process to users.
+Nandini is capable of intelligently describing her own architecture and creation process to users in real-time.
 
-## The ETL Data Pipeline
-The system's knowledge base is generated via a custom Node.js ETL (Extract, Transform, Load) script. This script automatically wipes stale ghost vectors from the database to ensure pristine data hygiene, chunks my raw project files, embeds the text using the appropriate embedding model, and indexes the vectors into a **Pinecone Serverless Database** alongside relational metadata (such as GitHub URLs and detailed portfolio deep links).
+---
 
-## Zero-LangChain Serverless Orchestration
-When a user speaks into the microphone on the frontend, the browser's native Web Speech API transcribes the audio and POSTs it to a **Vercel Serverless Function**. 
+## System Architecture
 
-I intentionally engineered a **Zero-LangChain** architecture, utilizing raw `fetch` for all API calls to minimize cold-start latency and reduce bundle size. The backend manages conversational memory automatically. If a user asks a follow-up question using pronouns, the LLM executes a *Contextualize Question* step to rewrite the query before executing the cosine similarity search against Pinecone.
+The architecture is divided into three highly optimized layers, strictly avoiding heavy abstractions like LangChain in favor of raw speed.
 
-The system utilizes **Grok** for high-speed generation. Annai is locked behind a strict grounding prompt that completely forbids hallucinations—if a question falls outside the scope of my top 5 core projects, she politely declines.
+### 1️⃣ The ETL Data Pipeline (Vector Generation)
+*   **Data Ingestion:** A custom Node.js script automatically crawls and chunks my raw project markdown files.
+*   **Vectorization:** Text chunks are embedded using high-dimensional embedding models.
+*   **Storage:** Vectors are indexed into a **Pinecone Serverless Database** alongside relational metadata (GitHub URLs, deep links). The script actively wipes stale ghost vectors to ensure pristine data hygiene.
 
-## Low-Latency Audio Synthesis & State Persistence
-To ensure the 3D avatar maintains a premium, fast-responding voice, the backend relies exclusively on **Google Cloud Neural2 TTS**. By stripping away third-party fallback dependencies, the system achieves incredibly low latency for voice generation. 
+### 2️⃣ Zero-LangChain Orchestration (Backend)
+*   **Native Web Speech:** The browser's native API transcribes spoken audio and POSTs it to the backend.
+*   **Vercel Serverless:** A lightning-fast serverless function intercepts the request.
+*   **Memory & Context:** The backend automatically rewrites queries using conversation history (Contextualize Question step) before executing the cosine similarity search.
+*   **Groq LLM Generation:** The system utilizes **Groq** for high-speed, grounded response generation, strictly forbidding hallucinations.
 
-On the frontend side, the chat widget implements `sessionStorage` persistence, guaranteeing that a user's conversation history and chat window state remain fully intact even as they navigate across different pages of the portfolio.
+### 3️⃣ Synthesis & State Persistence (Frontend)
+*   **Google Cloud Neural2 TTS:** By stripping away third-party fallback dependencies, the system achieves incredibly low latency for voice generation.
+*   **Session Persistence:** The React frontend utilizes `sessionStorage`, guaranteeing that a user's conversation history and chat window state remain fully intact even as they navigate across different pages.

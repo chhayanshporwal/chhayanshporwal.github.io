@@ -4,6 +4,7 @@ seo_title: "Orbit Workspace | Enterprise Collaboration & Real-Time Task Manageme
 description: "A live full-stack enterprise project management platform with a scalable Python/FastAPI backend and a React.js frontend, integrating real-time WebSockets and Redis."
 excerpt: "A scalable enterprise collaboration platform featuring real-time task management and instant notifications."
 collection: portfolio
+date: "2024-03-01"
 ---
 
 [<i class="fas fa-fw fa-link"></i> Live Site](https://www.orbitworkspace.xyz/) | [<i class="fab fa-fw fa-github"></i> View Source Code](https://github.com/chhayanshporwal/orbit-workspace)
@@ -12,8 +13,7 @@ collection: portfolio
 
 *   **Problem:** Enterprise teams require highly scalable backends and real-time synchronization to ensure seamless task management and instant notifications for all users without high latency.
 *   **Solution:** Architected a live full-stack enterprise project management platform. Developed a scalable backend using Python and FastAPI, and built a dynamic React.js frontend that integrates real-time WebSockets and Redis for instant notifications and task tracking.
-*   **Tech Stack:** Python, FastAPI, React.js, WebSockets, Redis, Pytest, GitHub Actions.
-*   **Outcome:** Delivered a robust collaboration platform with comprehensive automated test scripts using Pytest across REST APIs and continuous integration pipelines via GitHub Actions.
+*   **Tech Stack:** `Python`, `FastAPI`, `React.js`, `WebSockets`, `Redis`, `Pytest`, `GitHub Actions`
 
 ### System Architecture
 

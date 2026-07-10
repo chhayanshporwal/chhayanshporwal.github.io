@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ETL Script — Annai (案内) Voice RAG
+ETL Script — Nandini (案内) Voice RAG
 
 Zero-dependency Python ETL (uses only stdlib):
   - Reads knowledge.txt
@@ -168,7 +168,7 @@ def meta_for(sections, offset):
 
 # ─── Main ───────────────────────────────────────────────────────
 def main():
-    print("\n🚀  Annai ETL Pipeline — Starting...\n")
+    print("\n🚀  Nandini ETL Pipeline — Starting...\n")
 
     # 1. Load
     kpath = SCRIPT_DIR / "knowledge.txt"
@@ -226,7 +226,7 @@ def main():
 
     elapsed = time.time() - t0
     print(f"\n\n✅  Done! {len(vectors)} vectors upserted in {elapsed:.1f}s")
-    print("🎉  Annai's knowledge base is ready!\n")
+    print("🎉  Nandini's knowledge base is ready!\n")
 
 
 if __name__ == "__main__":

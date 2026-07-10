@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chhayansh Porwal | AI Enthusiast & Software Developer</title>
+    
+    <!-- Original Jekyll CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/academicons.css" />
+    <link rel="stylesheet" href="/assets/css/chat-widget.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Mermaid JS for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        mermaid.initialize({ startOnLoad: false });
+      });
+    </script>
+    
+
+    
+    <!-- Netlify Identity (for Decap CMS auth) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body class="page-home">
+    <div id="root"></div>
+    
+    <!-- ANNAI WIDGET (Outside React root so it never unmounts) -->
+    <button id="annai-wake-arrow" class="annai-wake-arrow" aria-label="Wake Annai">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </button>
+    <div id="annai-avatar-container" role="button" aria-label="Open Annai AI Assistant" tabindex="0"></div>
+    <div id="annai-tooltip">
+      Hi, I am <strong>Annai</strong>! Ask me anything about Chhayansh's work. ✨
+    </div>
+    
+    <div id="annai-chat-panel" role="dialog" aria-label="Annai AI Chat Assistant">
+      <div class="annai-header">
+        <div class="annai-header-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M5.5 21c0-4.5 2.9-7 6.5-7s6.5 2.5 6.5 7"/>
+            <path d="M12 1v2M8.5 2.5l1 1.7M15.5 2.5l-1 1.7"/>
+          </svg>
+        </div>
+        <div class="annai-header-info">
+          <div class="annai-header-name">Annai 案内</div>
+          <div class="annai-header-status">Online • AI Assistant</div>
+        </div>
+        <button class="annai-close-btn" id="annai-close-btn" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="annai-messages" id="annai-messages">
+        <div class="annai-welcome">
+          <div class="annai-welcome__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M5.5 21c0-4.5 2.9-7 6.5-7s6.5 2.5 6.5 7"/>
+              <path d="M12 1v2M8.5 2.5l1 1.7M15.5 2.5l-1 1.7"/>
+            </svg>
+          </div>
+          <h3>Konnichiwa! I'm Annai 👋</h3>
+          <p>I know everything about Chhayansh's projects, skills, and experience. Ask me in any language — English, Hindi, or Japanese!</p>
+        </div>
+      </div>
+      <div class="annai-input-area">
+        <input type="text" class="annai-input" id="annai-input" placeholder="Ask about Chhayansh's work..." autocomplete="off"/>
+        <button class="annai-btn annai-mic-btn" id="annai-mic-btn" aria-label="Voice input">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/>
+            <line x1="8" y1="23" x2="16" y2="23"/>
+          </svg>
+        </button>
+        <button class="annai-btn annai-speaker-btn" id="annai-speaker-btn" aria-label="Speaker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+        </button>
+        <button class="annai-btn annai-send-btn" id="annai-send-btn" aria-label="Send message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <script src="/assets/js/chat-widget.js"></script>
+    
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -4,6 +4,7 @@ seo_title: "AI Wedding Culling System | YOLOv8, CLIP & MTCNN Computer Vision Pip
 description: "An automated computer vision pipeline using YOLOv8, CLIP ViT-L/14, MTCNN, and FastAPI for high-throughput wedding photo culling, blur detection, and semantic image clustering."
 excerpt: "An AI-powered image processing backend to rapidly evaluate and filter raw wedding photography folders."
 collection: portfolio
+date: "2024-02-01"
 ---
 
 [<i class="fab fa-fw fa-github"></i> View Source Code](https://github.com/chhayanshporwal/AI-Wedding-Culling-Suite)
@@ -12,8 +13,7 @@ collection: portfolio
 
 *   **Problem:** Wedding photographers spend countless hours manually culling thousands of burst shots, wasting time identifying blurry images, closed eyes, and redundant frames.
 *   **Solution:** Deployed an automated pipeline that evaluates images using facial landmark detection to reject poor photos (motion blur, closed eyes). It also utilizes embedding clustering to group near-duplicate burst shots and specialized models to preserve images of enrolled VIPs.
-*   **Tech Stack:** Python, FastAPI, YOLOv8n, MediaPipe FaceMesh, CLIP ViT-L/14, OpenCV, MTCNN.
-*   **Outcome:** Drastically reduced manual review time for photographers by reliably automating the rejection of low-quality images and intelligently organizing vast datasets.
+*   **Tech Stack:** `Python`, `FastAPI`, `YOLOv8n`, `MediaPipe FaceMesh`, `CLIP ViT-L/14`, `OpenCV`, `MTCNN`
 
 ### Pipeline Architecture
 
@@ -43,4 +43,4 @@ flowchart TD
     O --> P
 ```
 
-*   **What I learned:** Mastered chaining multiple heavy computer vision models in a FastAPI backend and handling complex vector mathematics (L2 distance) for accurate image clustering.
+*   **What I learned:** Mastered chaining multiple heavy computer vision models in a FastAPI backend and handling complex vector mathematics (L2 distance) for accurate semantic image clustering.

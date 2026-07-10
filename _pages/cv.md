@@ -7,8 +7,6 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
-
 You can also [download my full CV as a PDF](/Chhayansh%20Porwal-CV.pdf).
 
 Education
@@ -41,14 +39,4 @@ Achievements
 
 * 📊 **CGPA: 8.73** — RTU, Kota
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
 
-Portfolio
-======
-  <ul>{% for post in site.portfolio reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>

@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: chhayanshporwal/chhayanshporwal.github.io
+  branch: react-migration
+  base_url: https://chhayanshporwal.github.io
+
+media_folder: "public/assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "_pages/about.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "string", default: "about"}
+          - {label: "Permalink", name: "permalink", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Author Profile", name: "author_profile", widget: "boolean"}
+          - {label: "Redirect From", name: "redirect_from", widget: "list", required: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "CV Page"
+        name: "cv"
+        file: "_pages/cv.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "string", default: "archive"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Permalink", name: "permalink", widget: "string"}
+          - {label: "Author Profile", name: "author_profile", widget: "boolean"}
+          - {label: "Redirect From", name: "redirect_from", widget: "list", required: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Experience Page"
+        name: "experience"
+        file: "_pages/experience.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "string", default: "archive"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Permalink", name: "permalink", widget: "string"}
+          - {label: "Author Profile", name: "author_profile", widget: "boolean"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          
+  - name: "portfolio"
+    label: "Portfolio Projects"
+    folder: "_portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Collection", name: "collection", widget: "string", default: "portfolio"}
+      - {label: "SEO Title", name: "seo_title", widget: "string", required: false}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Header Image", name: "header", widget: "object", required: false, fields: [{label: "Teaser", name: "teaser", widget: "image"}]}
+      - {label: "Body", name: "body", widget: "markdown"}
