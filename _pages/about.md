@@ -7,7 +7,7 @@ permalink: /
 author_profile: true
 ---
 
-I am a 3rd-year B.Tech Computer Science Engineering student at Rajasthan Technical University (CGPA: 8.73) and a Software Engineer specializing in native Android architecture, computer vision pipelines, and full-stack ML systems. My technical philosophy centers on deep engineering fundamentals — moving beyond surface-level integrations to understand system-level APIs and custom software architecture.
+I am a final-year B.Tech Computer Science Engineering student at Rajasthan Technical University, Kota (CGPA: 8.73) and a Software Engineer specializing in native Android architecture, computer vision pipelines, and full-stack ML systems. My technical philosophy centers on deep engineering fundamentals — moving beyond surface-level integrations to understand system-level APIs and custom software architecture.
 
 I have hands-on industry experience building AI-powered products: from chaining YOLOv8 + CLIP + MTCNN for an automated wedding photo culling system at Fotographiya, to architecting Orbit Workspace, a live full-stack enterprise project management platform with React.js, Python, and FastAPI at Softsensor.ai. My competitive research work on 3D Noise2Void denoising earned **Global Rank 2** at the AI4Life International Grand Challenge.
 
